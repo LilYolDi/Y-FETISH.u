@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f0f0f;
+    color:#fff;
+}
+
+header{
+    height:70px;
+    background:#181818;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    border-bottom:1px solid #303030;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.red{
+    color:#ff2020;
+}
+
+.search{
+    width:320px;
+    height:42px;
+    border:none;
+    border-radius:25px;
+    background:#262626;
+    color:#fff;
+    padding:0 15px;
+    outline:none;
+}
+
+.layout{
+    width:95%;
+    margin:25px auto;
+    display:grid;
+    grid-template-columns:2fr 380px;
+    gap:25px;
+}
+
+main{
+    width:100%;
+}
+
+#player{
+    width:100%;
+    background:#000;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+#title{
+    margin-top:20px;
+    font-size:32px;
+}
+
+.video-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:20px 0;
+    color:#bbb;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+}
+
+.buttons button{
+    background:#202020;
+    color:#fff;
+    border:none;
+    padding:12px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.buttons button:hover{
+    background:#ff2020;
+}
+
+.description{
+    background:#1b1b1b;
+    border-radius:12px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.description h2{
+    margin-bottom:12px;
+    color:#ff2020;
+}
+
+#nextVideos{
+    background:#181818;
+    border-radius:15px;
+    padding:15px;
+    height:fit-content;
+}
+
+#nextVideos h2{
+    margin-bottom:20px;
+}
+
+.card{
+    display:flex;
+    gap:12px;
+    margin-bottom:15px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:scale(1.02);
+}
+
+.card img{
+    width:150px;
+    height:85px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.card h3{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#999;
+    font-size:14px;
+}
+
+@media(max-width:900px){
+
+.layout{
+    grid-template-columns:1fr;
+}
+
+.search{
+    display:none;
+}
+
+#nextVideos{
+    margin-top:20px;
+}
+
+.card img{
+    width:130px;
+    height:75px;
+}
+
+}
