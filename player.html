@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Y-FETISH</title>
+
+<link rel="stylesheet" href="video.css">
+
+</head>
+<body>
+
+<header>
+
+<a href="index.html" class="logo">
+<span class="red">Y</span>-FETISH
+</a>
+
+<input type="text" placeholder="Поиск..." class="search">
+
+</header>
+
+<div class="layout">
+
+<main>
+
+<video id="player" controls autoplay playsinline></video>
+
+<h1 id="title"></h1>
+
+<div class="video-info">
+
+<div>
+👁 <span id="views"></span> просмотров
+</div>
+
+<div class="buttons">
+
+<button id="likeBtn">
+👍 <span id="likes"></span>
+</button>
+
+<button>
+👎
+</button>
+
+<button>
+🔗 Поделиться
+</button>
+
+</div>
+
+</div>
+
+<div class="description">
+
+<h2>Описание</h2>
+
+<p id="description"></p>
+
+</div>
+
+</main>
+
+<aside id="nextVideos">
+
+<h2>Следующие видео</h2>
+
+</aside>
+
+</div>
+
+<script>
+
+const videos = JSON.parse(localStorage.getItem("videos"));
+
+const id = Number(new URLSearchParams(location.search).get("id"));
+
+const video = videos[id];
+
+player.src = video.file;
+
+title.textContent = video.title;
+
+views.textContent = video.views.toLocaleString();
+
+likes.textContent = video.likes;
+
+description.textContent = video.description;
+
+const aside = document.getElementById("nextVideos");
+
+videos.forEach((v,i)=>{
+
+if(i===id) return;
+
+aside.innerHTML += `
+
+<div class="card" onclick="location.href='video.html?id=${i}'">
+
+<img src="${v.image}">
+
+<h3>${v.title}</h3>
+
+<p>👁 ${v.views.toLocaleString()}</p>
+
+</div>
+
+`;
+
+});
+
+</script>
+
+</body>
+</html>

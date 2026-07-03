@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оплата криптовалютой</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0d0d0d;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.box{
+    width:95%;
+    max-width:500px;
+    background:#171717;
+    border-radius:15px;
+    padding:25px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.pay{
+    background:#222;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.pay h2{
+    margin-bottom:10px;
+}
+
+.amount{
+    color:#00ff88;
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    background:#111;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    margin-bottom:10px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#ff2020;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#d10000;
+}
+
+.back{
+    display:block;
+    text-align:center;
+    color:#fff;
+    text-decoration:none;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>💰 Оплата криптовалютой</h1>
+
+<div class="pay">
+<h2>USDT (TRC20)</h2>
+
+<div class="amount">
+Сумма: <b>10 USDT</b>
+</div>
+
+<input id="usdt" value="TBZrFTnik3GmAwtU9NVhhBAPFhikVg4m2P" readonly>
+
+<button onclick="copyUSDT()">📋 Скопировать адрес</button>
+
+</div>
+
+<div class="pay">
+
+<h2>TON</h2>
+
+<div class="amount">
+Сумма: <b>50 TON</b>
+</div>
+
+<input id="ton" value="YOUR_TON_ADDRESS" readonly>
+
+<button onclick="copyTON()">📋 Скопировать адрес</button>
+
+</div>
+
+<a href="indexs.html" class="back">⬅ Вернуться на главную</a>
+
+</div>
+
+<script>
+
+function copyUSDT(){
+let copy=document.getElementById("usdt");
+copy.select();
+copy.setSelectionRange(0,99999);
+navigator.clipboard.writeText(copy.value);
+alert("Адрес USDT скопирован");
+}
+
+function copyTON(){
+let copy=document.getElementById("ton");
+copy.select();
+copy.setSelectionRange(0,99999);
+navigator.clipboard.writeText(copy.value);
+alert("Адрес TON скопирован");
+}
+
+</script>
+
+</body>
+</html>
